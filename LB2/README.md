@@ -21,6 +21,7 @@
 ![image](https://user-images.githubusercontent.com/125886145/221589505-e52d8849-9e13-44d3-a651-286e4e35b529.png)
 
 
+
 ## Eigene Lernumgebung ist eingerichtet
 ### GitHub oder Gitlab-Account erstellt
 Für das Repository in welchem Sie sich gerade befinden, brauchte ich einen Account, also ja.
@@ -40,6 +41,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 ### Wichtigste Lernschritte sind dokumentiert
 
 
+
+
 ## Vagrant
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
 
@@ -53,6 +56,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 ### Projekt mit Git und Markdown dokumentiert
 
+
+
 ## Sicherheitsaspekte sind implementiert
 ### Firewall eingerichtet inkl. Rules
 
@@ -65,6 +70,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 ### Sicherheitsmassnahmen sind dokumentiert
 
 ### Projekt mit Git und Mark Down dokumentiert
+
+
 
 ## Zusätzliche Bewertungspunkte
 ### 
