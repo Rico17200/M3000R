@@ -47,6 +47,10 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 ## Vagrant
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
+```Shell
+      $ vagrant init ubuntu/xenial64        #Vagrantfile erzeugen
+      $ vagrant up --provider virtualbox    #Virtuelle Maschine erstellen & starten
+``` 
 
 ### Kennt die Vagrant-Befehle
 
