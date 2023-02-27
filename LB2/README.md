@@ -40,8 +40,9 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 ### Wichtigste Lernschritte sind dokumentiert
 
-
-
+<br>
+<br>
+<br>
 
 ## Vagrant
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
