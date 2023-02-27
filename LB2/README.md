@@ -20,7 +20,8 @@
 ### SSH-Key für Client  erstellt
 ![image](https://user-images.githubusercontent.com/125886145/221589505-e52d8849-9e13-44d3-a651-286e4e35b529.png)
 
-
+<br>
+<br>
 
 ## Eigene Lernumgebung ist eingerichtet
 ### GitHub oder Gitlab-Account erstellt
@@ -42,7 +43,6 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 <br>
 <br>
-<br>
 
 ## Vagrant
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
@@ -57,7 +57,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 ### Projekt mit Git und Markdown dokumentiert
 
-
+<br>
+<br>
 
 ## Sicherheitsaspekte sind implementiert
 ### Firewall eingerichtet inkl. Rules
@@ -72,7 +73,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 
 ### Projekt mit Git und Mark Down dokumentiert
 
-
+<br>
+<br>
 
 ## Zusätzliche Bewertungspunkte
 ### 
