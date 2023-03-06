@@ -175,6 +175,11 @@ Vagrant Config Ende
 ### Sicherheitsmassnahmen sind dokumentiert
 
 ### Projekt mit Git und Mark Down dokumentiert
+![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
+
+![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
+
+
 
 <br>
 <br>
