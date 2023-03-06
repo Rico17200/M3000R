@@ -212,3 +212,12 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 #### Vergleich Vorwissen - Wissenszuwachs
 
 #### Reflexion
+#### Tag 1
+An diesem Tag hatten wir zuerst viel Theorie um mal einen Überblick über das Modul bekommen. Dann bei den praktischen arbeiten gab es direkt ein Problem mit Virtualbox. Die VM startete nicht. Ich habe dann die Kerne von 1 auf 2 erhöht und dann konnte ich sie ohne weitere Probleme installieren. Auf der VM Apache zu installieren lief dann zum Glück auch ohne Probleme. Mit Vagrant gab es noch Porbleme und ich hatte keine Zeit mehr nach der Lösung zu suchen. 
+
+#### Tag 2
+An diesem Tag habe ich eine VM mit Vagrant aufgesetzt. Es gab aber ein Problem mit meinen GitHub. Ich konnte nichts mehr pushen, da ich ein push durchgeführt hatte, aber es eine Datei dadrin gab, welche die mindestgrösse überschritt. Dadurch konnte ich nicht mehr pushen da die Meldung kam, dass es wegen diesem File nicht pushen kann. Auch wenn ich das File gelöscht habe, kam immernoch die selbe Fehlermeldung. Da ich im GitHub noch nicht wirklich viel drin hatte, erstellte ich einfach ein neues Repository und richtete dieses wieder in Visual Studio Code ein. 
+
+#### Tag 3
+Heute verbrachte ich die meiste Zeit dabei ein Vagrantfile zu erstellen, womit eine VM mit Nginx erstellt werden soll. Dabei hatte ich immer wieder andere Fehler. Ein Fehler am Schluss war z.B. das es bei mir mit dem Port 100 für den Host nicht ging da er bereits gebraucht wird(Siehe Bild unten). Danach habe ich es mit dem Port 101 versucht. Die VM wurde erstellt, aber ich konnte nicht im Webbrowser darauf zugreifen. Also habe ich den Port 8011 gesetzt, da dieser sicher frei sein sollte. Danach ging es auch endlich.
+image.png
