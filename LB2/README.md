@@ -175,6 +175,19 @@ Vagrant Config Ende
 ### Sicherheitsmassnahmen sind dokumentiert
 
 ### Projekt mit Git und Mark Down dokumentiert
+![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
+
+![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
+
+
+
+![image](https://user-images.githubusercontent.com/125886145/223131969-60fb59c3-5688-4575-b136-4119ac78e180.png)
+
+
+
+![image](https://user-images.githubusercontent.com/125886145/223137480-1a4c15ec-11ff-492c-9d05-fd76f79633fe.png)
+Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
+
 
 <br>
 <br>
