@@ -130,7 +130,7 @@ Verifikation des Dockerimages
     `$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > ``/dev/null`
 
 
-Firewall Rules setzten
+Firewall Rules setzen
     
     `sudo ufw --force enable`
     `sudo ufw allow 80/tcp`
