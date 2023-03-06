@@ -83,9 +83,9 @@ Welche Ubuntu Version verwendet wird
     `config.vm.box = "ubuntu/bionic64"`
 
 
-Port forwarding von 80 auf 100.
+Port forwarding von 80 auf 8011.
     
-    `config.vm.network "forwarded_port", guest:80, host:100, auto_correct: false`
+    `config.vm.network "forwarded_port", guest:80, host:8011, auto_correct: false`
 
 
 Bestimmen mit welchem Programm die VM erstellt werden soll
