@@ -102,7 +102,7 @@ Ende der Vagrant Config
     `end`
 
 
-VM Config einleiten. Festlegen das folgende zeilen in der Shell geschrieben werden.
+VM Config einleiten. Festlegen das folgende Zeilen in der Shell geschrieben werden.
 
     `config.vm.provision "shell", inline: <<-SHELL`
 
