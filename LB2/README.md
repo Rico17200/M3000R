@@ -71,6 +71,88 @@ Weitere Befehle unter: https://www.vagrantup.com/docs/cli/
 
 
 ### Eingerichtet Umgebung ist dokumentiert
+Hier sieht man den verwendeten Code und die Erklärung zu den jeweiligen Commands.
+
+Vagrant konfiguration einleiten
+
+    `Vagrant.configure(2) do |config|`
+
+
+Welche Ubuntu Version verwendet wird
+    
+    `config.vm.box = "ubuntu/bionic64"`
+
+
+Port forwarding von 80 auf 100.
+    
+    `config.vm.network "forwarded_port", guest:80, host:100, auto_correct: false`
+
+
+Bestimmen mit welchem Programm die VM erstellt werden soll
+    
+    `config.vm.provider "virtualbox" do |vb|`
+
+
+Festlegen wieviel Arbeitsspeicher verwendet werden darf
+    
+    `vb.memory = "1024"`
+
+Ende der Vagrant Config
+    
+    `end`
+
+
+VM Config einleiten. Festlegen das folgende zeilen in der Shell geschrieben werden.
+
+    `config.vm.provision "shell", inline: <<-SHELL`
+
+
+Neueste Updates herunterladen
+
+    `sudo apt-get update`
+
+
+Installieren von diversen Diensten
+    
+    `sudo apt-get install -y \`
+    `ca-certificates \`
+    `curl \`
+    `gnupg \`
+    `ufw \`
+    `lsb-release`
+
+
+Verifikation des Dockerimages
+
+    `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor `-o /usr/share/keyrings/docker-archive-keyring.gpg`
+    `echo \`
+    `"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/`docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \`
+    `$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > ``/dev/null`
+
+
+Firewall Rules setzten
+    
+    `sudo ufw --force enable`
+    `sudo ufw allow 80/tcp`
+    `sudo ufw allow 22`
+    `sudo ufw allow 2222`
+
+
+Install Docker
+
+    `sudo apt-get install docker-ce docker-ce-cli containerd.io -y`
+    
+    
+Volume für nginx erstellen und Nginx aktivieren und Port festlegen    
+    
+    `docker volume create nginx_data`
+    `docker run --name some-nginx -d -p 80:80 nginx`
+
+
+Vagrant Config Ende
+    
+    `SHELL`
+    `end`
 
 ### Funktionsweise getestet
 
