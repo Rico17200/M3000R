@@ -178,7 +178,12 @@ Vagrant Config Ende
 Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert.
 
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
-Curl prof.
+Curl proof.
+
+![image](https://user-images.githubusercontent.com/125886145/224705192-a2a9fb97-6c33-43f8-a296-43fac6cd43e2.png)
+Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File in /etc/passwd sehen.
+
+Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergeleitet.
 
 ### Projekt mit Git und Mark Down dokumentiert
 ![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
