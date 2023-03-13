@@ -211,4 +211,5 @@ Heute verbrachte ich die meiste Zeit dabei ein Vagrantfile zu erstellen, womit e
 ![image](https://user-images.githubusercontent.com/125886145/223152475-e2946989-3135-4605-bcc6-8b00d0b98f2f.png)
 
 #### Tag 4
-
+Am Anfang musste ich meine Vagrant VM wieder zum laufen bekommen, damit ich weiter arbeiten kann. Dies ging aber ganz leicht mit dem Befehl "vagrant up". Danach funktioniert alles wieder wie letztes mal. Ich konnte dann noch Testfälle dazu erstellen und testen. Es lief dabei alles ohne Probleme durch, was sehr erfreulich ist. Danach habe ich auch noch meine Dokumentation angepasst. z.B. habe ich die Punkte aus dem Bewertungsraster unter "Umgebung auf eigenem Notebook eingerichtet und funktionsfähig" aus meiner Dokumentation gelöscht, da diese die Voraussetzung für die spätere Arbeit sind und diese habe ich dann wiederum gut dokummentiert. 
+Abschliessend kann man sagen das heute der einzige Tag war, an dem keine wirkichen Probleme auftraten, was überraschend war, aber ich natürlich sehr gerne so nehme.
