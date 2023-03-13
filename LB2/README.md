@@ -18,6 +18,8 @@
   - [Zusätzliche Bewertungspunkte](#zusätzliche-bewertungspunkte)
     - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
       - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
+      - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
+      - [Neues Wissen](#neues-wissen)
       - [Reflexion](#reflexion)
       - [Tag 1](#tag-1)
       - [Tag 2](#tag-2)
@@ -198,6 +200,20 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 
 ### Persönliche Lernentwicklung
 #### Vergleich Vorwissen - Wissenszuwachs
+
+#### Vorwissen im Bezug zum Modul
+- Basic Linux Kenntnise
+- Schonmal von Container gehört aber nie verwendet
+
+#### Neues Wissen
+- Ich lernte Vagrant kennen
+- Ich lernte mit GitHub zu arbeiten, da ich noch nie damit arbeitete
+- Ich erfuhr wie man den Prozess vom aufsetzen automatisieren kann
+- Mir wurden die Vorteile davon klar
+- Ich lernte verschiedene Sicherheitsaspekte kennen
+  - Die Begriffe Authentizität und Authentisierung wurden aufgefrischt, da ich schon länger nicht mehr damit zu tun hatte
+- Ich lernte wie man die Firewall auf Linux konfiguriert
+- Die Benutzung von Proxys wurden mir wieder bewusst, da ich vor langer Zeit schonmal damit gearbeitet habe
 
 #### Reflexion
 #### Tag 1
