@@ -50,7 +50,7 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 ### Netzwerkplan
 <br>
 
-![Netzwerkplan_Rico](https://user-images.githubusercontent.com/125886145/224711493-3530b5eb-e10c-4f97-83cb-c0f0cfd4e3e7.png)
+![Netzwerkplan_Rico](https://user-images.githubusercontent.com/125886145/224711821-10bad918-ab3e-42ca-b12b-09d9482f08f5.png)
 
 <br>
 
