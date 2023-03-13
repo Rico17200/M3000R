@@ -46,6 +46,12 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 <br>
 
 ## Vagrant
+
+### Netzwerkplan
+<br>
+![image](https://user-images.githubusercontent.com/125886145/224711057-ec366881-4d00-47b2-ba51-7002392f6a6b.png)
+<br>
+
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
 ```Shell
       $ vagrant init ubuntu/xenial64        #Vagrantfile erzeugen
