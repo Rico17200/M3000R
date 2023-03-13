@@ -1,22 +1,31 @@
 # LB2
 
 ## Inhaltsverzeichnis
-- [M300 Leistungsbeurteilung 2](#LB2)
-  - [Inhaltsverzeichnis](#Inhaltsverzeichnis)
-  - 
+- [LB2](#lb2)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+    - [Netzwerkplan](#netzwerkplan)
+    - [Bestehende vm aus Vagrant-Cloud eingerichtet](#bestehende-vm-aus-vagrant-cloud-eingerichtet)
+    - [Kennt die Vagrant-Befehle](#kennt-die-vagrant-befehle)
+    - [Eingerichtet Umgebung ist dokumentiert](#eingerichtet-umgebung-ist-dokumentiert)
+    - [Funktionsweise getestet](#funktionsweise-getestet)
+    - [andere, vorfefertigte vm auf eigenem Notebook aufgesetzt](#andere-vorfefertigte-vm-auf-eigenem-notebook-aufgesetzt)
+  - [Sicherheitsaspekte sind implementiert](#sicherheitsaspekte-sind-implementiert)
+    - [Firewall eingerichtet inkl. Rules](#firewall-eingerichtet-inkl-rules)
+    - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
+    - [Benutzer- und Rechtvergabe ist eingerichtet](#benutzer--und-rechtvergabe-ist-eingerichtet)
+    - [Zugang mit SSH-Tunnel abgesichert](#zugang-mit-ssh-tunnel-abgesichert)
+  - [Testfälle](#testfälle)
+  - [Zusätzliche Bewertungspunkte](#zusätzliche-bewertungspunkte)
+    - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
+      - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
+      - [Reflexion](#reflexion)
+      - [Tag 1](#tag-1)
+      - [Tag 2](#tag-2)
+      - [Tag 3](#tag-3)
+      - [Tag 4](#tag-4)
 
 <br>
-
-
 <br>
-
-## Eigene Lernumgebung ist eingerichtet
-
-
-<br>
-<br>
-
-## Vagrant
 
 ### Netzwerkplan
 <br>
@@ -25,7 +34,7 @@
 
 <br>
 
-### Bestehende cm aus Vagrant-Cloud eingerichtet
+### Bestehende vm aus Vagrant-Cloud eingerichtet
 ```Shell
       $ vagrant init ubuntu/xenial64        #Vagrantfile erzeugen
       $ vagrant up --provider virtualbox    #Virtuelle Maschine erstellen & starten
@@ -152,9 +161,8 @@ Vagrant Config Ende
 
 ### Zugang mit SSH-Tunnel abgesichert
 
-### Sicherheitsmassnahmen sind dokumentiert
 
-### Testfälle
+## Testfälle
 Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert.
 
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
@@ -165,7 +173,7 @@ Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File i
 
 Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergeleitet.
 
-### Projekt mit Git und Mark Down dokumentiert
+
 ![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
 
 ![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
@@ -178,6 +186,7 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 
 ![image](https://user-images.githubusercontent.com/125886145/223137480-1a4c15ec-11ff-492c-9d05-fd76f79633fe.png)
 Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
+
 ![224703688-83d051b9-40ec-4df1-8891-4fd0eb801e12](https://user-images.githubusercontent.com/125886145/224703792-86e986ad-d445-47ac-8703-71b016c5be8c.png)
 
 
@@ -200,3 +209,6 @@ An diesem Tag habe ich eine VM mit Vagrant aufgesetzt. Es gab aber ein Problem m
 #### Tag 3
 Heute verbrachte ich die meiste Zeit dabei ein Vagrantfile zu erstellen, womit eine VM mit Nginx erstellt werden soll. Dabei hatte ich immer wieder andere Fehler. Ein Fehler am Schluss war z.B. das es bei mir mit dem Port 100 für den Host nicht ging da er bereits gebraucht wird(Siehe Bild unten). Danach habe ich es mit dem Port 101 versucht. Die VM wurde erstellt, aber ich konnte nicht im Webbrowser darauf zugreifen. Also habe ich den Port 8011 gesetzt, da dieser sicher frei sein sollte. Danach ging es auch endlich.
 ![image](https://user-images.githubusercontent.com/125886145/223152475-e2946989-3135-4605-bcc6-8b00d0b98f2f.png)
+
+#### Tag 4
+
