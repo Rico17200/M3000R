@@ -50,7 +50,8 @@ Ohne diesen könnten Sie meine Dokumentation hier nicht lesen, also habe ich die
 ### Netzwerkplan
 <br>
 
-![image](https://user-images.githubusercontent.com/125886145/224711057-ec366881-4d00-47b2-ba51-7002392f6a6b.png)
+![Netzwerkplan_Rico](https://user-images.githubusercontent.com/125886145/224711493-3530b5eb-e10c-4f97-83cb-c0f0cfd4e3e7.png)
+
 <br>
 
 ### Bestehende cm aus Vagrant-Cloud eingerichtet
