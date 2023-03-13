@@ -174,6 +174,9 @@ Vagrant Config Ende
 
 ### Sicherheitsmassnahmen sind dokumentiert
 
+### Testfälle
+Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert.
+
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
 Curl prof.
 
