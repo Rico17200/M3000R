@@ -171,6 +171,7 @@ Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfig
 Curl proof.
 
 ![image](https://user-images.githubusercontent.com/125886145/224705192-a2a9fb97-6c33-43f8-a296-43fac6cd43e2.png)
+<br>
 Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File in /etc/passwd sehen.
 
 Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergeleitet.
