@@ -5,7 +5,7 @@
   - [Inhaltsverzeichnis](#inhaltsverzeichnis)
     - [Netzwerkplan](#netzwerkplan)
     - [Bestehende vm aus Vagrant-Cloud eingerichtet](#bestehende-vm-aus-vagrant-cloud-eingerichtet)
-    - [Kennt die Vagrant-Befehle](#kennt-die-vagrant-befehle)
+    - [Vagrant-Befehle](#vagrant-befehle)
     - [VM-Webserver erstellen](#vm-webserver-erstellen)
     - [VM-Server mit UFW Firewall Config](#vm-server-mit-ufw-firewall-config)
     - [VM-Server mit Secure Shell Server](#vm-server-mit-secure-shell-server)
@@ -44,7 +44,7 @@
       $ vagrant up --provider virtualbox    #Virtuelle Maschine erstellen & starten
 ``` 
 
-### Kennt die Vagrant-Befehle
+### Vagrant-Befehle
 
 Die wichtigsten Befehle sind:
 
