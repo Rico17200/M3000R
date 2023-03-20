@@ -10,16 +10,15 @@
     - [VM-Server mit UFW Firewall Config](#vm-server-mit-ufw-firewall-config)
     - [VM-Server mit Secure Shell Server](#vm-server-mit-secure-shell-server)
     - [VM-Server mit Secure Shell Server, Reverse Proxy, Benutzerberechtigungen und Firewallregeln](#vm-server-mit-secure-shell-server-reverse-proxy-benutzerberechtigungen-und-firewallregeln)
-    - [Eingerichtet Umgebung ist dokumentiert](#eingerichtet-umgebung-ist-dokumentiert)
+    - [Eingerichtet Umgebung Dokumentation vom Code](#eingerichtet-umgebung-dokumentation-vom-code)
     - [Funktionsweise getestet](#funktionsweise-getestet)
     - [andere, vorfefertigte vm auf eigenem Notebook aufgesetzt](#andere-vorfefertigte-vm-auf-eigenem-notebook-aufgesetzt)
-  - [Sicherheitsaspekte sind implementiert](#sicherheitsaspekte-sind-implementiert)
+  - [Testfälle](#testfälle)
+    - [Zugriff funktioniert](#zugriff-funktioniert)
     - [Firewall eingerichtet inkl. Rules](#firewall-eingerichtet-inkl-rules)
     - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
     - [Benutzer- und Rechtvergabe ist eingerichtet](#benutzer--und-rechtvergabe-ist-eingerichtet)
     - [Zugang mit SSH-Tunnel abgesichert](#zugang-mit-ssh-tunnel-abgesichert)
-  - [Testfälle](#testfälle)
-  - [Zusätzliche Bewertungspunkte](#zusätzliche-bewertungspunkte)
     - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
       - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
@@ -190,7 +189,7 @@ end
 
 
 <br><br>
-### Eingerichtet Umgebung ist dokumentiert
+### Eingerichtet Umgebung Dokumentation vom Code
 Hier sieht man den verwendeten Code und die Erklärung zu den jeweiligen Commands.
 
 Vagrant konfiguration einleiten
@@ -284,7 +283,23 @@ Vagrant Config Ende
 <br>
 <br>
 
-## Sicherheitsaspekte sind implementiert
+## Testfälle
+
+### Zugriff funktioniert
+
+Zuerst konnte ich die VM mit dem Vagrantfile nicht erstellen.
+
+![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
+
+<br>
+Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
+<br>
+
+![image](https://user-images.githubusercontent.com/125886145/223137480-1a4c15ec-11ff-492c-9d05-fd76f79633fe.png)
+
+<br>
+
+
 ### Firewall eingerichtet inkl. Rules
 
 ### Reverse-Proky eingerichtet
@@ -292,9 +307,6 @@ Vagrant Config Ende
 ### Benutzer- und Rechtvergabe ist eingerichtet
 
 ### Zugang mit SSH-Tunnel abgesichert
-
-
-## Testfälle
 Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert.
 
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
@@ -317,9 +329,7 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 
 
 
-![image](https://user-images.githubusercontent.com/125886145/223137480-1a4c15ec-11ff-492c-9d05-fd76f79633fe.png)
-<br>
-Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
+
 
 ![224703688-83d051b9-40ec-4df1-8891-4fd0eb801e12](https://user-images.githubusercontent.com/125886145/224703792-86e986ad-d445-47ac-8703-71b016c5be8c.png)
 
@@ -328,7 +338,6 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 <br>
 <br>
 
-## Zusätzliche Bewertungspunkte
 
 ### Persönliche Lernentwicklung
 #### Vergleich Vorwissen - Wissenszuwachs
