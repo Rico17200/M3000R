@@ -17,7 +17,6 @@
 
 #### Vorwissen im Bezug zum Modul und LB3
 - Schon genau 1 Mal Docker verwendet, aber schon über 1 Jahr her und dadurch keine Kenntnisse mehr
-- 
 
 #### Neues Wissen
 - Aufbau von Docker
