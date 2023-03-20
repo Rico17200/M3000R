@@ -27,8 +27,6 @@
       - [Tag 2](#tag-2)
       - [Tag 3](#tag-3)
       - [Tag 4](#tag-4)
-    - [Bewertungsraster Leistungsbeurteilung 2](/LB2/M300-LB2-Bewertungsraster.xlsx)
-
 
 <br>
 <br>
