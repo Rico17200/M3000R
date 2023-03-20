@@ -304,6 +304,12 @@ Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File i
 
 ### Zugang mit SSH-Tunnel abgesichert
 
+Hier wird mit SSH über Putty zugegriffen.
+<br>
+![224703688-83d051b9-40ec-4df1-8891-4fd0eb801e12](https://user-images.githubusercontent.com/125886145/224703792-86e986ad-d445-47ac-8703-71b016c5be8c.png)
+<br>
+
+
 ### Reverse-Proky eingerichtet
 Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert. Dies konnte mit Curl getestet werden.
 
@@ -318,11 +324,6 @@ Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfig
 Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergeleitet.
 <br>
 ![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
-
-
-![224703688-83d051b9-40ec-4df1-8891-4fd0eb801e12](https://user-images.githubusercontent.com/125886145/224703792-86e986ad-d445-47ac-8703-71b016c5be8c.png)
-
-
 
 <br>
 <br>
