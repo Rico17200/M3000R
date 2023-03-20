@@ -6,6 +6,10 @@
     - [Netzwerkplan](#netzwerkplan)
     - [Bestehende vm aus Vagrant-Cloud eingerichtet](#bestehende-vm-aus-vagrant-cloud-eingerichtet)
     - [Kennt die Vagrant-Befehle](#kennt-die-vagrant-befehle)
+    - [VM-Webserver erstellen](#vm-webserver-erstellen)
+    - [VM-Server mit UFW Firewall Config](#vm-server-mit-ufw-firewall-config)
+    - [VM-Server mit Secure Shell Server](#vm-server-mit-secure-shell-server)
+    - [VM-Server mit Secure Shell Server, Reverse Proxy, Benutzerberechtigungen und Firewallregeln](#vm-server-mit-secure-shell-server-reverse-proxy-benutzerberechtigungen-und-firewallregeln)
     - [Eingerichtet Umgebung ist dokumentiert](#eingerichtet-umgebung-ist-dokumentiert)
     - [Funktionsweise getestet](#funktionsweise-getestet)
     - [andere, vorfefertigte vm auf eigenem Notebook aufgesetzt](#andere-vorfefertigte-vm-auf-eigenem-notebook-aufgesetzt)
@@ -57,6 +61,132 @@ Die wichtigsten Befehle sind:
 | `vagrant destroy`         | Stoppt die Virtuelle Maschine und zerstört sie.                   |
 
 Weitere Befehle unter: https://www.vagrantup.com/docs/cli/
+
+<br>
+
+### VM-Webserver erstellen 
+
+Zuerst ordner anlegen in der die VM sein soll und eine Datei "Vagrantfile" erstellen (ohne Dateiendung).
+In das Vagrant folgenden inhalt schreiben: <br>
+```
+Vagrant.configure(2) do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network "forwarded_port", guest:80, host:100, auto_correct: true
+    config.vm.synced_folder ".", "/var/www/html"  
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "512"  
+  end
+  config.vm.provision "shell", inline: <<-SHELL
+    # Packages vom lokalen Server holen
+    # sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
+    sudo apt-get update
+    sudo apt-get -y install apache2 
+  SHELL
+  end
+```
+Nun muss man nur noch in einer Shell in das Verzeichnis gehen und "`vagrant up`" eintippen.
+
+### VM-Server mit UFW Firewall Config
+
+Bei dieser VM wird gleich die Firewall mit installiert und zusätzlich noch rules erstellt.
+```
+Vagrant.configure(2) do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network "forwarded_port", guest:80, host:100, auto_correct: true
+    config.vm.synced_folder ".", "/var/www/html"  
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "512"  
+  end
+  config.vm.provision "shell", inline: <<-SHELL
+    # Packages vom lokalen Server holen
+    # sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
+    sudo apt-get install ufw
+    sudo ufw enable
+    sudo ufw allow 80/tcp
+    sudo ufw allow from 192.168.1.122 to any port 22
+    sudo ufw allow from 192.168.1.124 to any port 3306
+  SHELL
+  end
+```
+
+### VM-Server mit Secure Shell Server
+
+Bei dieser VM wird ein Secure Shell Server mit zusätzlichen Rules erstellt.
+```
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+  config.vm.synced_folder ".", "/var/www/html"  
+config.vm.provider "virtualbox" do |vb|
+  vb.memory = "512"  
+end
+config.vm.provision "shell", inline: <<-SHELL
+	sudo ufw --force enable
+	sudo ufw allow 22
+	sudo ufw allow 2222
+	sudo systemctl start ssh
+	sudo sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+	sudo sed -i "s/.*ChallengeResponseAuthentication.*/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
+	sudo reboot
+SHELL
+end
+```
+
+### VM-Server mit Secure Shell Server, Reverse Proxy, Benutzerberechtigungen und Firewallregeln
+
+Bei dieser VM wird ein Secure Shell Server installiert, Reverse Proxy, Benutzerberechtigungen und Firewallregeln eingerichtet.
+```
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+  config.vm.synced_folder ".", "/var/www/html"  
+config.vm.provider "virtualbox" do |vb|
+  vb.memory = "512"  
+end
+config.vm.provision "shell", inline: <<-SHELL
+	#VM Update
+	sudo apt-get update
+	#Apache Webserver installieren
+	sudo apt-get -y install apache2
+	#Firewall "enablen"
+	sudo ufw --force enable
+	#Port 22 und 2222 erlaunben/freischalten
+	sudo ufw allow 22
+	sudo ufw allow 2222
+	#SSH-Service starten
+	sudo systemctl start ssh
+	#Im sshd_config File zwei "Statments" mit Ja austauschen, damit keine Fehlermeldung kommnt
+	sudo sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+	sudo sed -i "s/.*ChallengeResponseAuthentication.*/ChallengeResponseAuthentication yes/g" /etc/ssh/sshd_config
+	#Owner von edm Verzeichis /var/mail an den User vagrant geben
+	sudo chown -c vagrant /var/mail
+	#Nur noch den Besitzer (in diesem Fall vagrant) auf das Verzeichnis erlauben
+	sudo chmod -R 700 /var/mail
+	#Nginx --> Reverse-proxy installieren
+	sudo apt-get -y install nginx
+	#Virtual Host deaktivieren
+	sudo unlink /etc/nginx/sites-enabled/default
+	#File für Reverse-proxy erstellen
+	sudo touch /etc/nginx/sites-available/reverse-proxy.conf
+	#Inhalt in File einfügen
+	cat <<%EOF% | sudo tee -a /etc/nginx/sites-available/reverse-proxy.conf
+	server {
+		listen 8080;
+		location / {
+			proxy_pass http://127.0.0.1;
+		}
+	}
+%EOF%
+	sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
+	#Apache Service stoppen
+	sudo systemctl stop apache2
+	#Nginx Service starten
+	sudo systemctl restart nginx
+	#VM rebooten
+	sudo reboot
+SHELL
+end
+```
 
 
 <br><br>
