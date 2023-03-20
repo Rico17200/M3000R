@@ -18,7 +18,7 @@
     - [Zugang mit SSH-Tunnel abgesichert](#zugang-mit-ssh-tunnel-abgesichert)
     - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
     - [Port forwarding](#port-forwarding)
-    - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
+  - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
       - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
       - [Neues Wissen](#neues-wissen)
@@ -329,7 +329,7 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 <br>
 
 
-### Persönliche Lernentwicklung
+## Persönliche Lernentwicklung
 #### Vergleich Vorwissen - Wissenszuwachs
 
 #### Vorwissen im Bezug zum Modul
