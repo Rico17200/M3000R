@@ -353,6 +353,7 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 - Ich lernte mit GitHub zu arbeiten, da ich noch nie damit arbeitete
 - Ich erfuhr wie man den Prozess vom aufsetzen automatisieren kann
 - Mir wurden die Vorteile davon klar
+- Ich konnte einen SSH Key einfach erstellen und einbinden
 - Ich lernte verschiedene Sicherheitsaspekte kennen
   - Die Begriffe Authentizität und Authentisierung wurden aufgefrischt, da ich schon länger nicht mehr damit zu tun hatte
 - Ich lernte wie man die Firewall auf Linux konfiguriert
