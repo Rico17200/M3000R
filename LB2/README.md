@@ -83,6 +83,7 @@ Vagrant.configure(2) do |config|
   end
 ```
 Nun muss man nur noch in einer Shell in das Verzeichnis gehen und "`vagrant up`" eintippen.
+<br>
 
 ### VM-Server mit UFW Firewall Config
 
@@ -106,6 +107,7 @@ Vagrant.configure(2) do |config|
   SHELL
   end
 ```
+<br>
 
 ### VM-Server mit Secure Shell Server
 
@@ -129,6 +131,7 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 ```
+<br>
 
 ### VM-Server mit Secure Shell Server, Reverse Proxy, Benutzerberechtigungen und Firewallregeln
 
@@ -188,6 +191,7 @@ end
 
 
 <br><br>
+
 ### Eingerichtet Umgebung Dokumentation vom Code
 Hier sieht man den verwendeten Code und die Erklärung zu den jeweiligen Commands.
 
