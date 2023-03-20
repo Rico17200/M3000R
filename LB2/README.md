@@ -17,6 +17,7 @@
     - [Benutzer- und Rechtvergabe ist eingerichtet](#benutzer--und-rechtvergabe-ist-eingerichtet)
     - [Zugang mit SSH-Tunnel abgesichert](#zugang-mit-ssh-tunnel-abgesichert)
     - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
+    - [Port forwarding](#port-forwarding)
     - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
       - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
@@ -282,7 +283,7 @@ Zuerst konnte ich die VM mit dem Vagrantfile nicht erstellen.
 ![image](https://user-images.githubusercontent.com/125886145/223131969-60fb59c3-5688-4575-b136-4119ac78e180.png)
 
 <br>
-Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
+Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich.
 <br>
 
 ![image](https://user-images.githubusercontent.com/125886145/223137480-1a4c15ec-11ff-492c-9d05-fd76f79633fe.png)
@@ -296,6 +297,11 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 
 ### Benutzer- und Rechtvergabe ist eingerichtet
 
+Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File in /etc/passwd sehen.
+<br>
+![image](https://user-images.githubusercontent.com/125886145/224705192-a2a9fb97-6c33-43f8-a296-43fac6cd43e2.png)
+<br>
+
 ### Zugang mit SSH-Tunnel abgesichert
 
 ### Reverse-Proky eingerichtet
@@ -304,24 +310,14 @@ Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfig
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
 <br>
 
-![image](https://user-images.githubusercontent.com/125886145/224705192-a2a9fb97-6c33-43f8-a296-43fac6cd43e2.png)
+
 <br>
-Alle Benutzer sind erfolgreich und korrekt eingerichtet. Dies kann man am File in /etc/passwd sehen.
+
+### Port forwarding
 
 Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergeleitet.
-
-
+<br>
 ![image](https://user-images.githubusercontent.com/125886145/223121317-29f7e78a-3862-4c36-a0b2-55c8ed210ff7.png)
-
-![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
-
-
 
 
 ![224703688-83d051b9-40ec-4df1-8891-4fd0eb801e12](https://user-images.githubusercontent.com/125886145/224703792-86e986ad-d445-47ac-8703-71b016c5be8c.png)
