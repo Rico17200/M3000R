@@ -19,10 +19,10 @@
     - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
     - [Port forwarding](#port-forwarding)
   - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
-      - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
+    - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
       - [Neues Wissen](#neues-wissen)
-      - [Reflexion](#reflexion)
+    - [Reflexion](#reflexion)
       - [Tag 1](#tag-1)
       - [Tag 2](#tag-2)
       - [Tag 3](#tag-3)
@@ -334,7 +334,7 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 
 
 ## Persönliche Lernentwicklung
-#### Vergleich Vorwissen - Wissenszuwachs
+### Vergleich Vorwissen - Wissenszuwachs
 
 #### Vorwissen im Bezug zum Modul
 - Basic Linux Kenntnise
@@ -350,7 +350,9 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 - Ich lernte wie man die Firewall auf Linux konfiguriert
 - Die Benutzung von Proxys wurden mir wieder bewusst, da ich vor langer Zeit schonmal damit gearbeitet habe
 
-#### Reflexion
+<br>
+
+### Reflexion
 #### Tag 1
 An diesem Tag hatten wir zuerst viel Theorie um mal einen Überblick über das Modul bekommen. Dann bei den praktischen arbeiten gab es direkt ein Problem mit Virtualbox. Die VM startete nicht. Ich habe dann die Kerne von 1 auf 2 erhöht und dann konnte ich sie ohne weitere Probleme installieren. Auf der VM Apache zu installieren lief dann zum Glück auch ohne Probleme. Mit Vagrant gab es noch Porbleme und ich hatte keine Zeit mehr nach der Lösung zu suchen. 
 
