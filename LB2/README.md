@@ -296,8 +296,16 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 
 
 ### Firewall eingerichtet inkl. Rules
+Hier wurde die Firewall konfiguriert
 
+Firewall Rules setzen
+    
+    `sudo ufw --force enable`
+    `sudo ufw allow 80/tcp`
+    `sudo ufw allow 22`
+    `sudo ufw allow 2222`
 
+Da der Zugriff funktioniert, sind auch die Rules erfolgreich gesetzt worden.
 
 ### Benutzer- und Rechtvergabe ist eingerichtet
 
