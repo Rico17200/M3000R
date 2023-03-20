@@ -14,11 +14,12 @@
 ## Persönliche Lernentwicklung
 
 ### Vergleich Vorwissen - Wissenszuwachs
+- Schon genau 1 Mal Docker verwendet, aber schon über 1 Jahr her und dadurch keine Kenntnisse mehr
+- 
 
 #### Vorwissen im Bezug zum Modul und LB3
 
 #### Neues Wissen
 
 ### Reflexion
-
 #### Tag 5
