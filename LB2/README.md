@@ -16,9 +16,9 @@
   - [Testfälle](#testfälle)
     - [Zugriff funktioniert](#zugriff-funktioniert)
     - [Firewall eingerichtet inkl. Rules](#firewall-eingerichtet-inkl-rules)
-    - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
     - [Benutzer- und Rechtvergabe ist eingerichtet](#benutzer--und-rechtvergabe-ist-eingerichtet)
     - [Zugang mit SSH-Tunnel abgesichert](#zugang-mit-ssh-tunnel-abgesichert)
+    - [Reverse-Proky eingerichtet](#reverse-proky-eingerichtet)
     - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
       - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul](#vorwissen-im-bezug-zum-modul)
@@ -289,7 +289,7 @@ Vagrant Config Ende
 
 Zuerst konnte ich die VM mit dem Vagrantfile nicht erstellen.
 
-![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
+![image](https://user-images.githubusercontent.com/125886145/223131969-60fb59c3-5688-4575-b136-4119ac78e180.png)
 
 <br>
 Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem ging es nicht. Also habe ich den Port zu 8011 gewechselt da dieser sicher frei ist. Nun geht es endlich
@@ -302,15 +302,17 @@ Nun geht es. Ich hatte vorhin Port 101 für den Host verwendet, aber mit diesem 
 
 ### Firewall eingerichtet inkl. Rules
 
-### Reverse-Proky eingerichtet
+
 
 ### Benutzer- und Rechtvergabe ist eingerichtet
 
 ### Zugang mit SSH-Tunnel abgesichert
-Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert.
+
+### Reverse-Proky eingerichtet
+Geht der Zugriff mit localhost:8011, so ist der Reverse Proxy erfolgreich konfiguriert. Dies konnte mit Curl getestet werden.
 
 ![image](https://user-images.githubusercontent.com/125886145/224703206-37f4d4fb-0d38-4f97-a0b7-fdc0dab19ced.png)
-Curl proof.
+<br>
 
 ![image](https://user-images.githubusercontent.com/125886145/224705192-a2a9fb97-6c33-43f8-a296-43fac6cd43e2.png)
 <br>
@@ -325,8 +327,9 @@ Um den Zugriff auf die Webseite zu erlangen, ist der Port 80 auf 8011 weitergele
 
 
 
-![image](https://user-images.githubusercontent.com/125886145/223131969-60fb59c3-5688-4575-b136-4119ac78e180.png)
 
+
+![image](https://user-images.githubusercontent.com/125886145/223127282-733c59d2-8501-4624-9401-62e7eb994f6b.png)
 
 
 
