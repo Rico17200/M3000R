@@ -11,8 +11,6 @@
     - [VM-Server mit Secure Shell Server](#vm-server-mit-secure-shell-server)
     - [VM-Server mit Secure Shell Server, Reverse Proxy, Benutzerberechtigungen und Firewallregeln](#vm-server-mit-secure-shell-server-reverse-proxy-benutzerberechtigungen-und-firewallregeln)
     - [Eingerichtet Umgebung Dokumentation vom Code](#eingerichtet-umgebung-dokumentation-vom-code)
-    - [Funktionsweise getestet](#funktionsweise-getestet)
-    - [andere, vorfefertigte vm auf eigenem Notebook aufgesetzt](#andere-vorfefertigte-vm-auf-eigenem-notebook-aufgesetzt)
   - [Testfälle](#testfälle)
     - [Zugriff funktioniert](#zugriff-funktioniert)
     - [Firewall eingerichtet inkl. Rules](#firewall-eingerichtet-inkl-rules)
@@ -274,14 +272,6 @@ Vagrant Config Ende
     `end`
 
 <br><br>
-
-### Funktionsweise getestet
-
-### andere, vorfefertigte vm auf eigenem Notebook aufgesetzt
-
-
-<br>
-<br>
 
 ## Testfälle
 
