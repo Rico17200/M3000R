@@ -97,9 +97,9 @@ docker cp index.html apache2:/var/www/html/
 <br>
 
 ### Service Überwachung
-Dieser Service ist sehr einfach einzurichten:
+Dieser Service ist sehr schwer einzurichten:
 ```
-run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
+docker run -d --name cadvisor -v :/rootfs:ro -v var-run:/var/run:rw -v sys:/sys:ro -v var-lib-docker-:/var/lib/docker:ro -p 8090:8080 google/cadvisor:latest
 ```
 Somit kann man nun im Browser mit "localhost:8080" auf den Service zugreifen.
 
@@ -152,3 +152,4 @@ winpty docker exec -it apache2 bash
 
 docker run -d --name cadvisor -v :/rootfs:ro -v var-run:/var/run:rw -v sys:/sys:ro -v var-lib-docker-:/var/lib/docker:ro -p 8090:8080 google/cadvisor:latest
 
+run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
