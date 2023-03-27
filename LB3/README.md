@@ -97,11 +97,30 @@ docker cp index.html apache2:/var/www/html/
 <br>
 
 ### Service Überwachung
-Dieser Service ist sehr schwer einzurichten:
+Dies Überwachung haben mir mittels Prometheus gemacht. Dafür musste zuerst yaml File erstellt werden mit folgendem Inhalt:
 ```
-docker run -d --name cadvisor -v :/rootfs:ro -v var-run:/var/run:rw -v sys:/sys:ro -v var-lib-docker-:/var/lib/docker:ro -p 8090:8080 google/cadvisor:latest
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+
+  - job_name: 'prometheus'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    static_configs:
+      - targets: ['localhost:9090']
+
+
+  - job_name: 'node'
+
+    static_configs:
+      - targets: ['0.0.0.0:8080']
 ```
-Somit kann man nun im Browser mit "localhost:8080" auf den Service zugreifen.
+Somit kann man nun im Browser mit "localhost:9090" auf diesen Service zugreifen.
 
 <br>
 
