@@ -3,12 +3,39 @@
 ## Inhaltsverzeichnis
 - [LB3](#lb3)
   - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Docker](#docker)
+  - [Befehle](#befehle)
+  - [Netzwerkplan](#netzwerkplan)
   - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
     - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul und LB3](#vorwissen-im-bezug-zum-modul-und-lb3)
       - [Neues Wissen](#neues-wissen)
     - [Reflexion](#reflexion)
       - [Tag 5](#tag-5)
+
+
+## Docker
+Docker ist eine Freie Software zur Isolierung von Anwendungen mit Hilfe von Containervirtualisierung. Docker vereinfacht die Bereitstellung von Anwendungen, weil sich Container, die alle nötigen Pakete enthalten, leicht als Dateien transportieren und installieren lassen.
+<br>
+
+## Befehle
+| Befehl            | Funktion                                             |
+| -------------     | ---------------------------------------------------- | 
+| ```docker pull```      | Holt ein Image. |
+| ```docker run```      | Started VM mit dem ausgewähltem Image. |
+| ```docker ps```      | Zeigt laufende Maschinen. |
+| ```docker version```      | Zeigt die Docker Version von Echo-Client und Server an. |
+| ```docker images```        | Listet alle Docker Images auf. |
+| ```docker exec```       | Führt einen Befehl in einem laufenden Container aus. |
+| ```docker search```    | Durchsucht das Docker Hub nach Images. |
+| ```docker attach```      | Hängt etwas an einen laufenden Container an. |
+| ```docker commit```   | Erstellt ein neues Image mit den Änderungen, die an einem Container vorgenommen worden sind. |
+| ```docker stop```   | Haltet die gewünschte Maschine an. |
+
+<br>
+
+## Netzwerkplan
+
 
 
 ## Persönliche Lernentwicklung
@@ -22,6 +49,7 @@
 - Aufbau von Docker
 - Docker Befehle
 - Das man nie Daten in Container speichern soll
+- Begriff DevOps 
 
 ### Reflexion
 #### Tag 5
