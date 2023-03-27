@@ -137,6 +137,7 @@ docker run --read-only -d -t --name Apache2 Image
 - Docker Befehle
 - Das man nie Daten in Container speichern soll
 - Begriff DevOps 
+- WSL2 kann nicht alles perfekt und nicht alle Tools funktionieren
 
 ### Reflexion
 #### Tag 5
@@ -145,18 +146,6 @@ Zudem lernte ich die Basic Docker Befehle wieder kennen und wie Docker genau fun
 Ich lernte auch den genauen unterschied von Virtuellen Maschinen und Docker kennen.
 
 #### Tag 6
-Heute hatte ich sehr viel Zeit mit Problemen verbracht. Davor haben wir auf diese Woche einige Informationen zu Docker, den Docker Files und Überwachung gesammelt. Aber als wir diese heute umzusetzen versuchten, gab es viele Fehler. Schon beim ersten Befehl von docker build gab es einen Fehler. Dieser konnten wir leicht beheben, indem wir anstatt docker build dockerfile, den Befehl docker build . verwendeten. Danach haben wir auch noch viel Zeit mit der Einbindung von Logical Volumes gemacht. 
+Heute hatte ich sehr viel Zeit mit Problemen verbracht. Davor haben wir auf diese Woche einige Informationen zu Docker, den Docker Files und Überwachung gesammelt. Aber als wir diese heute umzusetzen versuchten, gab es viele Fehler. Schon beim ersten Befehl von docker build gab es einen Fehler. Dieser konnten wir leicht beheben, indem wir anstatt docker build dockerfile, den Befehl docker build . verwendeten. Danach haben wir auch noch viel Zeit mit der Einbindung von Logical Volumes gemacht. Durch DOCKER_BUILDKIT=0 konnten wir den Fehler sehen.
 Zuerst wollten wir zur Überwachung Cadvisor verwenden, aber wir haben dann nach längerem recherchierent festgestellt, dass es in Windows nicht so gut funktioniert wie in der Linux Umgebung. WSL2 sollte dies eigentlich ergänzen aber das tat es nicht wie gewünscht. Das Hauptproblem lag auf die Berechtigungsebenen im Windows. C: hatte sehr spezifische Berechtigungen. Dementsprechend verursachte Cadvisor viel Probleme.
 Also haben wir entschieden, dass wir ein anderes Tool verwenden werden. Wir haben uns dabei auf Prometheus entschieden, da dies auch auf Windows einwandfrei funktionieren sollte.
-
-
-
-
-DOCKER_BUILDKIT=0  docker build .
-docker tag 06d77f556a7e apache2
-docker run --rm -d -p 8080:80 -v web:/var/www/html --name apache2 06d77f556a7e
-winpty docker exec -it apache2 bash
-
-docker run -d --name cadvisor -v :/rootfs:ro -v var-run:/var/run:rw -v sys:/sys:ro -v var-lib-docker-:/var/lib/docker:ro -p 8090:8080 google/cadvisor:latest
-
-run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
