@@ -122,6 +122,11 @@ scrape_configs:
 ```
 Somit kann man nun im Browser mit "localhost:9090" auf diesen Service zugreifen.
 
+Danach musste man noch folgenden Docker run Befehl ausführen:
+```
+docker run -p 9090:9090 -v prometheus.yaml:/etc/prometheus/prometheus.yaml prom/prometheus
+```
+
 <br>
 
 ### Container Sicherheit
