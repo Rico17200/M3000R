@@ -65,27 +65,27 @@ CMD /bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGR
 #### Container starten
 Zuerst wird ein Image erstellt:
 ```
-docker build <Pfad vom Dockerfile>
+docker build C:\Users\ricog\M3000R\LB3
 ```
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
 ``` 
-docker tag <Image ID> <Name den man vergeben will>
+docker tag <ID> Apache2
 ```
 
 Nun kann man die VM starten (hier wird der Port 8080 weitergeleitet):
 ```
-docker run --rm -d -p 8080:80 -v /web:/var/www/html --name <Container Name> <Image ID>
+docker run --rm -d -p 8080:80 -v /web:/var/www/html --name Apache2 <ID>
 ```
 
 So könnte man im nachhinein auf die Shell zugreifen:
 ```
-docker exec -it Webserver /bin/bash
+docker exec -it Apache2 /bin/bash
 ```
 
-So könnte man auch die Website abändern:
+So könnte man auch die Webseite abändern:
 ```
-docker cp <Pfad vom HTML File auf Notebook> <VM Name>:/var/www/html/
+docker cp C:\Users\ricog\M3000R\LB3\index.html Apache2:/var/www/html/
 ```
 
 <br>
@@ -103,9 +103,9 @@ Somit kann man nun im Browser mit "localhost:8080" auf den Service zugreifen.
 Hiermit kann der normale User keine sudo Befehle ausführen:
 Das Dockerfile muss folgendes beinhalten:
 ```
-RUN useradd -ms /bin/bash NeuerUserName
-USER NeuerUserName
-WORKDIR /homeNeuerUserName
+RUN useradd -ms /bin/bash Username
+USER Username
+WORKDIR /homedir
 ```
 
 <br>
@@ -113,8 +113,10 @@ WORKDIR /homeNeuerUserName
 #### Read-Only
 Wenn man den Docker mit der Option read-only startet, können keine Änderungen am Dateisystem vorgenommen werden (auch mit sudo nicht):
 ```
-docker run --read-only -d -t --name NameDesContainer Image
+docker run --read-only -d -t --name Apache2 Image
 ```
+<br>
+
 
 
 ## Persönliche Lernentwicklung
