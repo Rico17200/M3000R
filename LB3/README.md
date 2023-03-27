@@ -149,3 +149,6 @@ DOCKER_BUILDKIT=0  docker build .
 docker tag 06d77f556a7e apache2
 docker run --rm -d -p 8080:80 -v web:/var/www/html --name apache2 06d77f556a7e
 winpty docker exec -it apache2 bash
+
+docker run -d --name cadvisor -v :/rootfs:ro -v var-run:/var/run:rw -v sys:/sys:ro -v var-lib-docker-:/var/lib/docker:ro -p 8090:8080 google/cadvisor:latest
+
