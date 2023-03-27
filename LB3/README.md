@@ -17,6 +17,7 @@
       - [Neues Wissen](#neues-wissen)
     - [Reflexion](#reflexion)
       - [Tag 5](#tag-5)
+      - [Tag 6](#tag-6)
 
 
 ## Docker
@@ -70,22 +71,22 @@ docker build C:\Users\ricog\M3000R\LB3
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
 ``` 
-docker tag <ID> Apache2
+docker tag <ID> apache2
 ```
 
 Nun kann man die VM starten (hier wird der Port 8080 weitergeleitet):
 ```
-docker run --rm -d -p 8080:80 -v /web:/var/www/html --name Apache2 <ID>
+docker run --rm -d -p 8080:80 -v /web:/var/www/html --name apache2 <ID>
 ```
 
 So könnte man im nachhinein auf die Shell zugreifen:
 ```
-docker exec -it Apache2 /bin/bash
+docker exec -it apache2 /bin/bash
 ```
 
 So könnte man auch die Webseite abändern:
 ```
-docker cp C:\Users\ricog\M3000R\LB3\index.html Apache2:/var/www/html/
+docker cp C:\Users\ricog\M3000R\LB3\index.html apache2:/var/www/html/
 ```
 
 <br>
@@ -137,3 +138,7 @@ docker run --read-only -d -t --name Apache2 Image
 Zuerst wollte ich Docker wieder einmal öffnen, aber da bekam ich nur Fehlermeldungen. Also dachte ich, ich installiere Docker neu, da es sowieso viele neue Versionen gibt. Bei der Installation gab es aber wieder Fehler, aber es lief durch. Das öffnen von Docker Desktop ging aber nicht. Also löschte ich Docker Desktop ganz und installierte danach Docker erneut. Danach konnte ich Docker Desktop endlich öffnen. Dies verbrauchte schon viel Zeit und Nerven.
 Zudem lernte ich die Basic Docker Befehle wieder kennen und wie Docker genau funktioniert.
 Ich lernte auch den genauen unterschied von Virtuellen Maschinen und Docker kennen.
+
+#### Tag 6
+DOCKER_BUILDKIT=0  docker build .
+docker tag 06d77f556a7e apache2
