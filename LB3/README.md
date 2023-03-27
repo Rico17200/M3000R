@@ -144,7 +144,8 @@ WORKDIR /homedir
 #### Read-Only
 Wenn man den Docker mit der Option read-only startet, können keine Änderungen am Dateisystem vorgenommen werden (auch mit sudo nicht):
 ```
-docker run --read-only -d -t --name apache2 Image
+docker run --read-only -d -t --name apache2 apache2
+
 ```
 <br>
 
