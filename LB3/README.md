@@ -6,6 +6,11 @@
   - [Docker](#docker)
   - [Befehle](#befehle)
   - [Netzwerkplan](#netzwerkplan)
+    - [Dockerfile](#dockerfile)
+      - [Container starten](#container-starten)
+    - [Service Überwachung](#service-überwachung)
+    - [Container Sicherheit](#container-sicherheit)
+      - [Read-Only](#read-only)
   - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
     - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul und LB3](#vorwissen-im-bezug-zum-modul-und-lb3)
@@ -36,6 +41,80 @@ Docker ist eine Freie Software zur Isolierung von Anwendungen mit Hilfe von Cont
 
 ## Netzwerkplan
 
+### Dockerfile
+
+```
+#
+#	  Einfache Apache Umgebung
+#
+FROM ubuntu:14.04
+RUN apt-get update
+RUN apt-get -q -y install apache2 
+# Konfiguration Apache
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+RUN mkdir -p /var/lock/apache2 /var/run/apache2
+EXPOSE 80
+VOLUME /var/www/html
+CMD /bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
+```
+
+<br>
+
+#### Container starten
+Zuerst wird ein Image erstellt:
+```
+docker build <Pfad vom Dockerfile>
+```
+
+Danach das Image umbennen, damit es einfacher zu erkennen ist:
+``` 
+docker tag <Image ID> <Name den man vergeben will>
+```
+
+Nun kann man die VM starten (hier wird der Port 8080 weitergeleitet):
+```
+docker run --rm -d -p 8080:80 -v /web:/var/www/html --name <Container Name> <Image ID>
+```
+
+So könnte man im nachhinein auf die Shell zugreifen:
+```
+docker exec -it Webserver /bin/bash
+```
+
+So könnte man auch die Website abändern:
+```
+docker cp <Pfad vom HTML File auf Notebook> <VM Name>:/var/www/html/
+```
+
+<br>
+
+### Service Überwachung
+Dieser Service ist sehr einfach einzurichten:
+```
+run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
+```
+Somit kann man nun im Browser mit "localhost:8080" auf den Service zugreifen.
+
+<br>
+
+### Container Sicherheit
+Hiermit kann der normale User keine sudo Befehle ausführen:
+Das Dockerfile muss folgendes beinhalten:
+```
+RUN useradd -ms /bin/bash NeuerUserName
+USER NeuerUserName
+WORKDIR /homeNeuerUserName
+```
+
+<br>
+
+#### Read-Only
+Wenn man den Docker mit der Option read-only startet, können keine Änderungen am Dateisystem vorgenommen werden (auch mit sudo nicht):
+```
+docker run --read-only -d -t --name NameDesContainer Image
+```
 
 
 ## Persönliche Lernentwicklung
