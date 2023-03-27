@@ -64,9 +64,14 @@ CMD /bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGR
 <br>
 
 #### Container starten
+Zuerst zum Verzeichnis wechseln:
+```
+cd M3000R\LB3
+```
+
 Zuerst wird ein Image erstellt:
 ```
-docker build C:\Users\ricog\M3000R\LB3
+docker build .
 ```
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
@@ -76,17 +81,17 @@ docker tag <ID> apache2
 
 Nun kann man die VM starten (hier wird der Port 8080 weitergeleitet):
 ```
-docker run --rm -d -p 8080:80 -v /web:/var/www/html --name apache2 <ID>
+docker run --rm -d -p 8080:80 -v web:/var/www/html --name apache2 <ID>
 ```
 
 So könnte man im nachhinein auf die Shell zugreifen:
 ```
-docker exec -it apache2 /bin/bash
+winpty docker exec -it apache2 bash
 ```
 
 So könnte man auch die Webseite abändern:
 ```
-docker cp C:\Users\ricog\M3000R\LB3\index.html apache2:/var/www/html/
+docker cp index.html apache2:/var/www/html/
 ```
 
 <br>
@@ -142,3 +147,5 @@ Ich lernte auch den genauen unterschied von Virtuellen Maschinen und Docker kenn
 #### Tag 6
 DOCKER_BUILDKIT=0  docker build .
 docker tag 06d77f556a7e apache2
+docker run --rm -d -p 8080:80 -v web:/var/www/html --name apache2 06d77f556a7e
+winpty docker exec -it apache2 bash
