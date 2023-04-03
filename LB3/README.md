@@ -21,6 +21,8 @@
     - [Reflexion](#reflexion)
       - [Tag 5](#tag-5)
       - [Tag 6](#tag-6)
+      - [Tag 7 / mein letzter Tag](#tag-7--mein-letzter-tag)
+      - [Gesamtreflexion](#gesamtreflexion)
 
 
 ## Docker
@@ -44,6 +46,9 @@ Docker ist eine Freie Software zur Isolierung von Anwendungen mit Hilfe von Cont
 <br>
 
 ## Netzwerkplan
+
+![](Screens/Netzwerkplan_Container.png "Netzwerkplan")
+<br>
 
 ### Dockerfile
 
@@ -279,6 +284,8 @@ Jetzt kann man auf die Webseite zugreifen:
 - Das man nie Daten in Container speichern soll
 - Begriff DevOps 
 - WSL2 kann nicht alles perfekt und nicht alle Tools funktionieren
+- Kubernetes kennengelernt
+- Kubernetes verwendet mit Docker und Apache
 
 <br>
 
@@ -292,3 +299,14 @@ Ich lernte auch den genauen unterschied von Virtuellen Maschinen und Docker kenn
 Heute hatte ich sehr viel Zeit mit Problemen verbracht. Davor haben wir auf diese Woche einige Informationen zu Docker, den Docker Files und Überwachung gesammelt. Aber als wir diese heute umzusetzen versuchten, gab es viele Fehler. Schon beim ersten Befehl von docker build gab es einen Fehler. Dieser konnten wir leicht beheben, indem wir anstatt docker build dockerfile, den Befehl docker build . verwendeten. Danach haben wir auch noch viel Zeit mit der Einbindung von Logical Volumes gemacht. Durch DOCKER_BUILDKIT=0 konnten wir den Fehler sehen.
 Zuerst wollten wir zur Überwachung Cadvisor verwenden, aber wir haben dann nach längerem recherchierent festgestellt, dass es in Windows nicht so gut funktioniert wie in der Linux Umgebung. WSL2 sollte dies eigentlich ergänzen aber das tat es nicht wie gewünscht. Das Hauptproblem lag auf die Berechtigungsebenen im Windows. C: hatte sehr spezifische Berechtigungen. Dementsprechend verursachte Cadvisor viel Probleme.
 Also haben wir entschieden, dass wir ein anderes Tool verwenden werden. Wir haben uns dabei auf Prometheus entschieden, da dies auch auf Windows einwandfrei funktionieren sollte.
+
+#### Tag 7 / mein letzter Tag
+Heute hatte ich mir noch vorgenommen Kubernetes zu brauchen. Wir hatten aber nicht mehr alle 4 Lektionen Zeit, da wir noch eine Prüfung haben. Das machte mir ein bisschen Angst, da ich bei Kubernetes an einen langen Prozess denke und wir es zudem noch nie gebraucht haben. 
+Als wir dann Anfangen wollten, haben wir auf dem Gitlab nachgeschaut. Dort gab es eine Verlinkung zu einer Anleitung, welche aber nicht mehr existierte. Dies machte die Angst nurnoch grösser. Da wurden wir auch unsicher, ob wir Kubernetes überhaupt verwenden sollen. Wir dachten uns dann aber das wir es zumindest versuchen müssen und bei unserem letzten Tag nochmals alles geben. Wir haben dann selbst gegooglet und uns von verschiedenen Quellen und eigenes umschreiben Kubernetes aufgebaut. Dies verlief aber leider nicht einfach ohne Probleme. Diese haben wir durch noch mehr googlen dann einzeln lösen können. Es waren z.B. kleinere Sachen, wie Ports und name.
+
+#### Gesamtreflexion
+Zussamengefasst hat mir das Modul gut gefallen. Ich fand es sehr gut, dass wir sehr viel selber arbeiten und lernen konnten. Dies war zwar Teils sehr frustrierend, da es bei uns viele Fehler gab. Diese konnten wir zwar alle lösen / umgehen, aber es kostete viel Zeit. Da Ich einen ganzen Tag weniger habe, wegen meinem Sprachaufenthalt, machte ich mir Sorgen ob ich alles rechtzeitig erledigen kann. So haben wir eigentlich fast nie die Pausen gemacht und eigentlich alle Pausen durchgearbeitet um mehr Zeit zu haben.
+Aber ich arbeite generelle so, dass ich bei Problemen immer zuerst selbst nachschaue und erst Hilfe holen gehe, wenn ich schon lange an dem selbem Problem bin. Also machte mir diese Arbeitsweise keine Probleme. 
+Ich habe das ganze Modul mit Tharsan zusammen gearbeitet. Dies machte es ein bisschen einfacher, da wir uns so bei Problemen immer austauschen konnten, falls nur eine Person ein Problem hatte, oder zusammen nach Lösungen suchen, falls wir beide dasselbe Problem haben.
+
+Ich fand aber auch, dass wir zum Teil ein bisschen mehr Informationen von der Lehrkraft gut gebraucht hätten, anstatt alles selbst zu googlen von zum Teil falschen Quellen. So hätten wir uns noch ein bisschen mehr Zeit sparen können.
