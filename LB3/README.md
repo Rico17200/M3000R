@@ -94,6 +94,8 @@ So könnte man im nachhinein auf die Shell zugreifen:
 winpty docker exec -it apache2 bash
 ```
 
+![](Screens/docker_exec.png "Docker exec")
+
 So könnte man auch die Webseite abändern:
 ```
 docker cp index.html apache2:/var/www/html/
