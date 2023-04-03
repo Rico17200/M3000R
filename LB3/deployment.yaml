@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubdeployment
+  labels:
+    app: kub
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: kub
+  template:
+    metadata:
+      labels:
+        app: kub
+    spec:
+      containers:
+      - name: kub-webserver
+        image: webserver
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

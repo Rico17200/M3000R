@@ -11,6 +11,9 @@
     - [Service Überwachung](#service-überwachung)
     - [Container Sicherheit](#container-sicherheit)
       - [Read-Only](#read-only)
+  - [Kubernetes](#kubernetes)
+    - [Deployment yaml erstellen](#deployment-yaml-erstellen)
+    - [Service](#service)
   - [Persönliche Lernentwicklung](#persönliche-lernentwicklung)
     - [Vergleich Vorwissen - Wissenszuwachs](#vergleich-vorwissen---wissenszuwachs)
       - [Vorwissen im Bezug zum Modul und LB3](#vorwissen-im-bezug-zum-modul-und-lb3)
@@ -73,6 +76,8 @@ Zuerst wird ein Image erstellt:
 ```
 docker build .
 ```
+
+![](../screens/../LB3/Screens/docker_build.png.png "Docker Build")
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
 ``` 
@@ -149,6 +154,82 @@ docker run --read-only -d -t --name apache2 apache2
 ```
 <br>
 
+
+## Kubernetes
+
+### Deployment yaml erstellen
+```
+touch deployment.yaml
+```
+
+Inhalt der Date deployment.yaml:
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubdeployment
+  labels:
+    app: kub
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: kub
+  template:
+    metadata:
+      labels:
+        app: kub
+    spec:
+      containers:
+      - name: kub-webserver
+        image: webserver
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+```
+Jetzt muss das yaml file noch applied werden, damit die Container erstellt werden. Dafür muss man diesen Commmand eingeben:
+```
+kubectl apply -f deployment.yaml
+```
+
+Mit folgendem Command kann man nun die Pods anzeigen:
+```
+kubectl get pods
+```
+
+
+
+### Service
+
+Jetzt muss noch ein loadbalance.yaml file erstellt werden mit diesm Inhalt:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubservice
+  annotations:
+    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
+  labels:
+    app: kubservice
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: kub
+  sessionAffinity: None
+```
+Nun muss man den Service ausführen:
+```
+kubectl apply -f loadbalance.yaml
+```
+Und so kann er angezeigt werden:
+```
+kubectl get services
+```
 
 
 ## Persönliche Lernentwicklung
