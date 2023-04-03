@@ -78,11 +78,16 @@ docker build .
 ```
 
 ![](Screens/docker_build.png "Docker Build")
+<br>
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
 ``` 
 docker tag <ID> apache2
 ```
+
+![](Screens/docker_tag_docker_run.png "Docker tag")
+<br>
+
 
 Nun kann man die VM starten (hier wird der Port 8080 weitergeleitet):
 ```
@@ -95,6 +100,7 @@ winpty docker exec -it apache2 bash
 ```
 
 ![](Screens/docker_exec.png "Docker exec")
+<br>
 
 So könnte man auch die Webseite abändern:
 ```
@@ -134,6 +140,8 @@ docker run -p 9090:9090 -v prometheus.yaml:/etc/prometheus/prometheus.yaml prom/
 ```
 
 Somit kann man nun im Browser mit "localhost:9090" auf diesen Service zugreifen.
+
+![](Screens/prometheus.png "Überwachung Prometheus")
 
 <br>
 
@@ -194,11 +202,15 @@ Jetzt muss das yaml file noch applied werden, damit die Container erstellt werde
 kubectl apply -f deployment.yaml
 ```
 
+![](Screens/kubectl%20apply.png "kubectl apply")
+<br>
+
 Mit folgendem Command kann man nun die Pods anzeigen:
 ```
 kubectl get pods
 ```
 
+![](Screens/kubectl%20get%20pods.png "get Pods")
 
 
 ### Service
@@ -228,10 +240,21 @@ Nun muss man den Service ausführen:
 ```
 kubectl apply -f loadbalance.yaml
 ```
+
+![](Screens/apply%20loadbalance.png "apply loadbalance")
+
+
 Und so kann er angezeigt werden:
 ```
 kubectl get services
 ```
+
+![](Screens/kubectl%20get%20services.png "get Services")
+<br>
+
+Jetzt kann man auf die Webseite zugreifen:
+
+![](Screens/kubernetas%20apache.png "Apache")
 
 
 ## Persönliche Lernentwicklung
