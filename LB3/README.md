@@ -77,7 +77,7 @@ Zuerst wird ein Image erstellt:
 docker build .
 ```
 
-![](../screens/../LB3/Screens/docker_build.png.png "Docker Build")
+![](Screens/docker_build.png.png "Docker Build")
 
 Danach das Image umbennen, damit es einfacher zu erkennen ist:
 ``` 
